@@ -1,0 +1,85 @@
+/* Default Desktop*/
+html {
+
+  /* General*/
+  --title-font-size: x-large;
+  --main-content-margin-left: 20%;
+  --main-content-margin-right: 20%;
+  --details-padding-left: 2px;
+  --details-padding-right: 2px;
+  --details-margin-top: 25px;
+  --details-content-margin: 8px;
+  --sumary-font-size: x-large;
+  --paragraph-font-size: medium;
+}
+
+/* Small screens (laptop)*/
+@media screen and (max-width:1024px) {
+  html {
+    /* General*/
+    --main-content-margin-left: 15%;
+    --main-content-margin-right: 15%;
+
+  }
+}
+
+/* Mobile phone*/
+@media screen and (max-width:480px) {
+  html {
+    /* General*/
+    --title-font-size: medium;
+
+  }
+}
+
+/* General settings*/
+body {
+  margin: 0;
+  background-color: var(--page-background-colour);
+}
+
+html, table, div, p, h1, h2, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, .sm-dox a:focus, #projectname, .SelectItem, #MSearchField, .navpath li.navelem a, .navpath li.navelem a:hover {
+  font-family: Arial, sans-serif;
+}
+
+p {
+  font-size: var(--paragraph-font-size);
+}
+
+details {
+  background-color: var(--details-background-color);
+  box-shadow: var(--details-box-shadow);
+  margin-top: var(--details-margin-top);
+  padding-left: var(--details-padding-left);
+  padding-bottom: var(--details-padding-right);
+}
+
+details summary {
+  cursor: pointer;
+}
+
+summary {
+  font-size: var(--sumary-font-size);
+  font-weight: bold;
+}
+
+details p, img {
+  margin: var(--details-content-margin);
+}
+
+pre {
+  position: relative;
+}
+
+/* General settings end*/
+
+
+/*Classes*/
+
+.main-content {
+  text-align: left;
+  color: black;
+  margin-left: var(--main-content-margin-left);
+  margin-right: var(--main-content-margin-right);
+}
+

@@ -1,0 +1,25 @@
+-cpu=S3
+-c
+-dev="C:/Users/MyPC/.eclipse/com.renesas.platform_491468003/DebugComp/RL78/RL78/Common/DR7F100GFN.DVF"
+-MAKEUD="C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\HardwareDebug\src\smc_gen\r_bsp\mcu\rl78_g23"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\general"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_config"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_bsp"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_UARTA0"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_INTC"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_PORT"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_TAU0_0"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_hs300x"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_hs300x\inc\api"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_hs300x\inc\instances"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_IICA0"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_CSI00"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\Config_TAU0_5"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_comms_i2c_rl\inc\api"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_comms_i2c_rl"
+-I "C:\Users\MyPC\e2_studio\workspace\rl78g23_air_quality_da16200 (2).zip_expanded\da16200_test\src\smc_gen\r_comms_i2c_rl\inc\instances" 
+-character_set=utf8
+-lang=c99
+-g
+-Onothing 
