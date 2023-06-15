@@ -65,24 +65,20 @@ static char my_get_contents_updated[] =
 		"<H1 ALIGN=\"center\"> "
 		//"<td> Temperature </td>"
 		"<td>"
-		"<div class=\"semi-donut margin\" style=\"--percentage : %2d; --fill: #FF3D00 ;\">%2d&#176C<br>\r\nTemperature</div>"
-		//"<div class=\"hide\"> %2dC </div>"
+		"<div class=\"semi-donut margin\" id = \"temp\"  style=\"--percentage : %2d; --fill: %s;\"><font size=\"+3\">%2d&#176C<br>\r\n   <font size=\"5\">Temperature</font></font></div>"
+		//"<div style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Temperature </div>"
 		"</td>\r\n"
 		"<td>"
-		"<div class=\"semi-donut margin\" style=\"--percentage : %2d; --fill: #039BE5 ;\">%2d&#37<br>\r\n Humidity</div>"
-		//"<div class=\"hide\"> %2d&#37</div>"
+		"<div class=\"semi-donut margin\" id = \"humidity\" style=\"--percentage : %2d; --fill: %s ;\"><font size=\"+3\">%2d&#37<br>\r\n  <font size=\"5\">Humidity</font></font></div>"
+		//"<div style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Humidity </div>"
 		"</td>\r\n"		"</H1>\r\n"
 		"</tr>"
 
 		//"<tr>"
-		//"<h1 ALIGN=\"center\"> "
-		//"<td style=\"height: 80px; width: 25px; text-align: center; font-size: large; border:none;\"> Temperature </td>"
-		//"<td style=\"height: 80px; width: 30px; text-align: center; font-size: large; border:none;\"> Humidity </td>"
-		//"<td style=\"height: 80px; text-align: center; font-size: large; border:none;\"><b> Humidity </b></td>"
-		//"<td><meter style=\"height: 60px; width: 800px; text-align: center;\" value=\"%2d\" min=\"0\" max=\"100\" style=\"text-align:center\">\r\n"
-		//"<td><input style=\"height: 80px; width: 30px; text-align: center; font-size: large; border:none;\" type=text value=\"%2d\" readonly=\"readonly\" style=\"text-align:center\"></td>\r\n"
-		//"<td> &#37 </td>"
-		//"</h1>\r\n"
+		//"<H1 ALIGN=\"center\"> "
+		//"<td style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Temperature </td>"
+		//"<td style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Humidity </td>"
+		//"</H1>\r\n"
 		//"</tr>"
 
 		"</table>\r\n"
@@ -241,7 +237,6 @@ static void http_ippt_get(uint8_t * buffer, uint8_t *ippt)
 	ippt++;
 	p++;
 }
-
 /************************************************************************************
  * Name:       http_update
  * Function:   update html page
@@ -255,8 +250,36 @@ void  http_update(uint8_t * http_ippt)
 	sensor_data.humidity_int = get_humidity();
 	sensor_data.temperature_int = get_temp();
 	memset(user_buffer, 0 , 2048);
-	sprintf((char *)user_buffer,(char *)my_get_contents_updated,(uint16_t)(sensor_data.temperature_int*100/65),(uint16_t)sensor_data.temperature_int,(uint16_t)sensor_data.humidity_int,(uint16_t)sensor_data.humidity_int,0U);
+	char temp_colour[7] = "";
+	char humidity_colour[7] = "";
+	if(sensor_data.temperature_int < 25) {
+		strcpy(temp_colour,"#FEDA3E");
+	}
+	else if(sensor_data.temperature_int < 35)
+	{
+		strcpy(temp_colour,"#FFA500");
+	}
+	else{
+		strcpy(temp_colour,"#E62A39");
+	}
 
+
+	if(sensor_data.humidity_int < 25) {
+		strcpy(humidity_colour,"#86CEFA");
+	}
+	else if(sensor_data.humidity_int < 50)
+	{
+		strcpy(humidity_colour,"#5494DA");
+	}
+	else if(sensor_data.humidity_int < 75)
+	{
+		strcpy(humidity_colour,"#1750AC");
+	}
+	else{
+		strcpy(humidity_colour,"#152238");
+	}
+	sprintf((char *)user_buffer,(char *)my_get_contents_updated,(uint16_t)(sensor_data.temperature_int*100/65),(char *) temp_colour, (uint16_t)sensor_data.temperature_int,(uint16_t)sensor_data.humidity_int,(char *)humidity_colour,(uint16_t)sensor_data.humidity_int,0U);
+	char *temp_color =
 	len = (uint16_t)strlen((char *)user_buffer);
 	sprintf((char *)temp_buffer, "HTTP/1.1 200 \r\nContent-Length: %d\r\nContent-Type: text/html\r\n\r\n", len);
 
