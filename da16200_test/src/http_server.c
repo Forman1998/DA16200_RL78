@@ -23,12 +23,15 @@
 #include "sensor.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct
 {
 	int16_t temperature_int; /**< integer portion of the temperature*/
 	int16_t humidity_int; /**< integer portion of the humidity*/
 }sensor_data_t;
+
 static sensor_data_t sensor_data = {0, 0};
+
 static char my_get_contents_updated[] =
 		"<html style= \"font-family: Arial, sans-serif\">"
 		"<head>"
@@ -44,16 +47,16 @@ static char my_get_contents_updated[] =
 		"&:hover{&:after{opacity: .8; cursor: pointer;}}"
 		"}"
 		".semi-donut:hover +.hide{ display: block; color: var(--fill);}"
-		//"@keyframes fillGraphAnimation{0%%{transform: rotate(0deg);}50%%{transform: rotate(180deg);}}"
 		"</style>"
 		"<title>RL78/G23 Indoor Air Quality Training - Low Power</title>"
 		"</head>"
 		"<body style= \"margin: 0; background-color:=#fcfcfd\">"
-		//
 		"<header style=\"height: 80px; color: #fcfcfd; background-color: #29289D; text-align: center;font-size: x-large;\">"
 		"<h2 style=\"float: left;  max-width:1000px;  margin-left: 100px;  margin-top: 30px;  font-size: x-large;\"> RL78/G23 - DA16200 WiFi Diagnostic Demo </h2>"
+#if 0
 		//data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3P/2wCEAA0NDQ0ODQ4QEA4UFhMWFB4bGRkbHi0gIiAiIC1EKjIqKjIqRDxJOzc7STxsVUtLVWx9aWNpfZeHh5e+tb75+f8BDQ0NDQ4NDhAQDhQWExYUHhsZGRseLSAiICIgLUQqMioqMipEPEk7NztJPGxVS0tVbH1pY2l9l4eHl761vvn5///CABEIAIMC+wMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//aAAgBAQAAAACnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/EABQQAQAAAAAAAAAAAAAAAAAAAKD/2gAIAQEAAT8ATB//xAAUEQEAAAAAAAAAAAAAAAAAAACA/9oACAECAQE/AFh//8QAFBEBAAAAAAAAAAAAAAAAAAAAgP/aAAgBAwEBPwBYf//Z
 		//"<img style = \"height: 80px; width: 800px;  float: right;  margin-top: 20px;  margin-right: 20px;\" src=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gAfQ29tcHJlc3NlZCBieSBqcGVnLXJlY29tcHJlc3P/2wCEAA0NDQ0ODQ4QEA4UFhMWFB4bGRkbHi0gIiAiIC1EKjIqKjIqRDxJOzc7STxsVUtLVWx9aWNpfZeHh5e+tb75+f8BDQ0NDQ4NDhAQDhQWExYUHhsZGRseLSAiICIgLUQqMioqMipEPEk7NztJPGxVS0tVbH1pY2l9l4eHl761vvn5///CABEIAIMC+wMBIgACEQEDEQH/xAAVAAEBAAAAAAAAAAAAAAAAAAAAB//aAAgBAQAAAACnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oACAEDEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/EABQQAQAAAAAAAAAAAAAAAAAAAKD/2gAIAQEAAT8ATB//xAAUEQEAAAAAAAAAAAAAAAAAAACA/9oACAECAQE/AFh//8QAFBEBAAAAAAAAAAAAAAAAAAAAgP/aAAgBAwEBPwBYf//Z\"  />"
+#endif
 		"</header><br>"
 		"<br>\r\n"
 		"<br>\r\n"
@@ -63,23 +66,13 @@ static char my_get_contents_updated[] =
 
 		"<tr>"
 		"<H1 ALIGN=\"center\"> "
-		//"<td> Temperature </td>"
 		"<td>"
 		"<div class=\"semi-donut margin\" id = \"temp\"  style=\"--percentage : %2d; --fill: %s;\"><font size=\"+3\">%2d&#176C<br>\r\n   <font size=\"5\">Temperature</font></font></div>"
-		//"<div style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Temperature </div>"
 		"</td>\r\n"
 		"<td>"
 		"<div class=\"semi-donut margin\" id = \"humidity\" style=\"--percentage : %2d; --fill: %s ;\"><font size=\"+3\">%2d&#37<br>\r\n  <font size=\"5\">Humidity</font></font></div>"
-		//"<div style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Humidity </div>"
 		"</td>\r\n"		"</H1>\r\n"
 		"</tr>"
-
-		//"<tr>"
-		//"<H1 ALIGN=\"center\"> "
-		//"<td style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Temperature </td>"
-		//"<td style=\"height: 80px; width: 500px; text-align: center; font-size: large; border:none;\"> Humidity </td>"
-		//"</H1>\r\n"
-		//"</tr>"
 
 		"</table>\r\n"
 
@@ -105,7 +98,7 @@ static void http_ippt_get(uint8_t * buffer, uint8_t *ippt);
 /************************************************************************************
  * Name:       http_server_receive
  * Function:   receive data and process receive message
- * Parameters: http_ippt
+ * Parameters: http_ippt - TODO: comment
  * Return:     http receive status
  ************************************************************************************/
 http_receive_status http_server_receive( uint8_t * http_ippt)
@@ -247,8 +240,8 @@ void  http_update(uint8_t * http_ippt)
 {
 	uint16_t len;
 	Sensor_read(/*&sensor_data*/);
-	sensor_data.humidity_int = get_humidity();
-	sensor_data.temperature_int = get_temp();
+	sensor_data.humidity_int = Sensor_get_humidity();
+	sensor_data.temperature_int = Sensor_get_temp();
 	memset(user_buffer, 0 , 2048);
 	char temp_colour[7] = "";
 	char humidity_colour[7] = "";

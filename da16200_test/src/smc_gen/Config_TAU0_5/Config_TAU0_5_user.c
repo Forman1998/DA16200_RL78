@@ -66,11 +66,24 @@ void R_Config_TAU0_5_Create_UserInit(void)
 static void __near r_Config_TAU0_5_interrupt(void)
 {
     /* Start user code for r_Config_TAU0_5_interrupt. Do not edit comment generated here */
-	//timer_callback();
-    Sensor_oneshot_callback();
-	R_Config_TAU0_5_Stop();
     /* End user code. Do not edit comment generated here */
 }
 
 /* Start user code for adding. Do not edit comment generated here */
+
+void R_Config_TAU0_5_Blocking_Wait(void)
+{
+    TMIF05 = 0U;    /* clear INTTM05 interrupt flag */
+    TMMK05 = 1U;    /* disable INTTM05 interrupt */
+    TS0 |= _0020_TAU_CH5_START_TRG_ON;
+
+    while(0U == TMIF05)
+    {
+        NOP(); /* TODO: HALT*/
+    }
+
+    TT0 |= _0020_TAU_CH5_STOP_TRG_ON;
+    TMIF05 = 0U;    /* clear INTTM05 interrupt flag */
+}
+
 /* End user code. Do not edit comment generated here */

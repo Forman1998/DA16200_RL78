@@ -55,11 +55,7 @@ void Hal_uart_start(void)
 	R_Config_UARTA0_Receive(rx_buf, 1U);
 }
 /* END OF FUNCTION*/
-void Hal_sensor_start(void)
-{
-	//R_Config_TAU0_5_Start();
-	Sensor_init();
-}
+
 void Hal_uart_stop(void)
 {
 	/* Stop the UART peripheral*/

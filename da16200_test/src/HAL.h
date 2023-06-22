@@ -8,6 +8,8 @@
 #ifndef APP_HAL_HAL_H_
 #define APP_HAL_HAL_H_
 
+/* TODO: rename both .h & .c files to hal*/
+
 /** TODO: PORT: Make sure appropriate code generation tool headers are placed here*/
 #include "r_smc_entry.h"
 #include <stdbool.h>
@@ -21,9 +23,6 @@
 
 /** @brief starts/enables UART peripheral*/
 void Hal_uart_start(void);
-
-/** @brief starts/enables UART peripheral*/
-void Hal_sensor_start(void);
 
 /** @brief stops/disables UART peripheral*/
 void Hal_uart_stop(void);

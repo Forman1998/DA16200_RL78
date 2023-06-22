@@ -26,7 +26,7 @@ typedef enum http_receive_status
 {
     HTTP_GET = 1,
     HTTP_POST,
-    HTTP_LED_ON,
+    HTTP_LED_ON, /* TODO: Remove unused enum's*/
     HTTP_LED_OFF,
     HTTP_LED_BLINK,
     HTTP_OTHERS,

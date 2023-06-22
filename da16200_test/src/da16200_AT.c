@@ -181,7 +181,9 @@ fsp_err_t wifi_init(void)
 
 	/* Enable the UART*/
 	Hal_uart_start();
-	Hal_sensor_start();
+	
+	Sensor_init();
+	
 	/* Initialise cmd lengths*/
 	for(uint16_t i = 0U; i < DA16200_CMD_SET_LENGTH; ++i)
 	{
@@ -204,6 +206,8 @@ fsp_err_t wifi_init(void)
 	{
 		return status;
 	}
+
+	/* TODO: Check version is compatible with image.*/
 
 	return status;
 }

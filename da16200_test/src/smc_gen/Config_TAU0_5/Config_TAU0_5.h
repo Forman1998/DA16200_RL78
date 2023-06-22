@@ -53,5 +53,7 @@ void R_Config_TAU0_5_Start(void);
 void R_Config_TAU0_5_Stop(void);
 void R_Config_TAU0_5_Create_UserInit(void);
 /* Start user code for function. Do not edit comment generated here */
+/** @brief - Performs blocking wait for time specified in TDR05*/
+void R_Config_TAU0_5_Blocking_Wait(void);
 /* End user code. Do not edit comment generated here */
 #endif

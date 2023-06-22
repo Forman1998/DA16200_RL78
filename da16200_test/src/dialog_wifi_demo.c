@@ -41,7 +41,7 @@ void dialog_wifi_demo(void)
 	while(1)
 	{
 		Sensor_try_trigger_read();
-		Sensor_read(/*&sensor_data*/);
+		Sensor_read();
 		memset(http_ip_port, 0, 500);
 		http_status = HTTP_ERROR;
 		/* Wi-Fi server data receive */
