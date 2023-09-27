@@ -14,12 +14,12 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2021, 2022 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2021, 2023 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name        : Config_TAU0_0_user.c
-* Component Version: 1.3.0
+* Component Version: 1.4.0
 * Device(s)        : R7F100GFNxFP
 * Description      : This file implements device driver for Config_TAU0_0.
 ***********************************************************************************************************************/
@@ -30,7 +30,6 @@ Includes
 #include "r_cg_userdefine.h"
 #include "Config_TAU0_0.h"
 /* Start user code for include. Do not edit comment generated here */
-#include "HAL.h"
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

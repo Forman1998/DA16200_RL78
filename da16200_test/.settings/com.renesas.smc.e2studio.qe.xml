@@ -4,8 +4,6 @@
         <Setting id="SrcGeneratedPath" value="src/smc_gen"/>
     </Segment>
     <Segment id="Pin">
-        <Setting id="P01" value="P01"/>
-        <Setting id="P12" value="SO00"/>
         <Setting id="P147" value="P147"/>
         <Setting id="P146" value="P146"/>
         <Setting id="P70" value="P70"/>
@@ -16,6 +14,10 @@
         <Setting id="P60" value="SCLA0"/>
         <Setting id="P40" value="TOOL0"/>
         <Setting id="P10" value="SCK00"/>
+        <Setting id="P01" value="P01"/>
+        <Setting id="P12" value="SO00"/>
+        <Setting id="P16" value="CCD00"/>
+        <Setting id="P17" value="CCD01"/>
     </Segment>
     <Segment id="Device">
         <Setting id="Series" value="RL78G2x"/>
@@ -36,9 +38,8 @@
     <Segment id="Component">
         <Setting id="Config_UARTA0" value="CG"/>
         <Setting id="Config_TAU0_0" value="CG"/>
-        <Setting id="r_bsp" value=""/>
         <Setting id="Config_INTC" value="CG"/>
-        <Setting id="r_hs300x" value=""/>
+        <Setting id="r_bsp" value=""/>
         <Setting id="Config_CSI00" value="CG"/>
         <Setting id="Config_PORT" value="CG"/>
         <Setting id="Config_TAU0_5" value="CG"/>

@@ -14,12 +14,12 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2021, 2022 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2021, 2023 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name        : Config_PORT.c
-* Component Version: 1.3.0
+* Component Version: 1.4.0
 * Device(s)        : R7F100GFNxFP
 * Description      : This file implements device driver for Config_PORT.
 ***********************************************************************************************************************/
@@ -52,6 +52,17 @@ Global variables and functions
 ***********************************************************************************************************************/
 void R_Config_PORT_Create(void)
 {
+    volatile uint16_t w_count;
+
+    CCDE = _02_P17_OUTPUT_CURRENT_ON | _01_P16_OUTPUT_CURRENT_ON;
+
+    /* Wait for stable time (10us) */
+    for (w_count = 0U; w_count < PORT_STABLE_WAITTIME; w_count++)
+    {
+        NOP();
+    }
+ 
+    CCS0 = _00_OUTPUT_CURRENT_HIZ;
     /* Set PORT0 registers */
     P0 = _00_Pn1_OUTPUT_0 | _00_Pn0_OUTPUT_0;
     PDIDIS0 = _00_PDIDISn0_INPUT_BUFFER_ON;
@@ -59,6 +70,14 @@ void R_Config_PORT_Create(void)
     PMCT0 = _00_PMCTn1_DIGITAL_ON | _00_PMCTn0_NOT_USE;
     PMCE0 = _00_PMCEn1_DIGITAL_ON;
     PM0 =  _FC_PM0_DEFAULT | _00_PMn1_MODE_OUTPUT | _01_PMn0_NOT_USE;
+    /* Set PORT1 registers */
+    P1 = _00_Pn7_OUTPUT_0 | _00_Pn6_OUTPUT_0 | _00_Pn5_OUTPUT_0 | _00_Pn4_OUTPUT_0 | _00_Pn3_OUTPUT_0 | 
+         _00_Pn2_OUTPUT_0 | _00_Pn1_OUTPUT_0 | _00_Pn0_OUTPUT_0;
+    PMCA1 = _F7_PMCA1_DEFAULT | _08_PMCAn3_NOT_USE;
+    PMCE1 = _00_PMCEn7_DIGITAL_ON | _00_PMCEn6_DIGITAL_ON | _00_PMCEn5_NOT_USE | _00_PMCEn4_NOT_USE | 
+            _00_PMCEn3_NOT_USE | _00_PMCEn2_NOT_USE | _00_PMCEn1_NOT_USE | _00_PMCEn0_NOT_USE;
+    PM1 = _00_PMn7_MODE_OUTPUT | _00_PMn6_MODE_OUTPUT | _20_PMn5_NOT_USE | _10_PMn4_NOT_USE | _08_PMn3_NOT_USE | 
+          _04_PMn2_NOT_USE | _02_PMn1_NOT_USE | _01_PMn0_NOT_USE;
     /* Set PORT7 registers */
     P7 = _00_Pn3_OUTPUT_0 | _00_Pn2_OUTPUT_0 | _00_Pn1_OUTPUT_0 | _01_Pn0_OUTPUT_1;
     PDIDIS7 = _00_PDIDISn2_INPUT_BUFFER_ON | _00_PDIDISn1_INPUT_BUFFER_ON;
