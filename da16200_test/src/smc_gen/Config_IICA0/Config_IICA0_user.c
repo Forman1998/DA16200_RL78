@@ -14,13 +14,13 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2021, 2023 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2021, 2022 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name        : Config_IICA0_user.c
-* Component Version: 1.5.0
-* Device(s)        : R7F100GFNxFP
+* Component Version: 1.4.0
+* Device(s)        : R7F100GGNxFB
 * Description      : This file implements device driver for Config_IICA0.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
@@ -49,7 +49,6 @@ extern volatile uint16_t g_iica0_rx_cnt;                 /* iica0 receive data c
 extern volatile uint8_t * gp_iica0_tx_address;           /* iica0 send buffer address */
 extern volatile uint16_t g_iica0_tx_cnt;                 /* iica0 send data count */
 /* Start user code for global. Do not edit comment generated here */
-extern void rm_comms_i2c_bus0_callback(bool aborted);
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -214,7 +213,6 @@ static void r_Config_IICA0_master_handler(void)
 static void __near r_Config_IICA0_interrupt(void)
 {
     /* Start user code for r_Config_IICA0_interrupt. Do not edit comment generated here */
-    EI();
     /* End user code. Do not edit comment generated here */
     if (0x80U == (IICS0 & _80_IICA_STATUS_MASTER))
     {

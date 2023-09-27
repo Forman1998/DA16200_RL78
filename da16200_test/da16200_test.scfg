@@ -9,7 +9,7 @@
                 <option id="com.renesas.smc.toolchain.option.buildArtefactType" key="com.renesas.smc.toolchain.option.buildArtefactType.exe"/>
             </toolchain>
         </configuration>
-        <platform id="R7F100GFNxFP"/>
+        <platform id="R7F100GGNxFB"/>
         <option id="board" value="user_board"/>
     </general>
     <tool id="Clock">
@@ -177,9 +177,9 @@
         <Item bank="0" id="SAU1_INTSRE2" priority="3"/>
         <Item bank="0" id="ELCL_INTELCL" priority="3"/>
         <Item bank="0" id="SMS_INTSMSE" priority="3"/>
-        <Item bank="0" id="SAU0_INTST0" priority="1"/>
-        <Item bank="0" id="SAU0_INTCSI00" priority="1"/>
-        <Item bank="0" id="SAU0_INTIIC00" priority="1"/>
+        <Item bank="0" id="SAU0_INTST0" priority="3"/>
+        <Item bank="0" id="SAU0_INTCSI00" priority="3"/>
+        <Item bank="0" id="SAU0_INTIIC00" priority="3"/>
         <Item bank="0" id="TAU0_INTTM00" priority="3"/>
         <Item bank="0" id="SAU0_INTSRE0" priority="3"/>
         <Item bank="0" id="TAU0_INTTM01H" priority="3"/>
@@ -191,6 +191,8 @@
         <Item bank="0" id="TAU0_INTTM03H" priority="3"/>
         <Item bank="0" id="IICA_INTIICA0" priority="1"/>
         <Item bank="0" id="SAU0_INTSR0" priority="3"/>
+        <Item bank="0" id="SAU0_INTCSI01" priority="3"/>
+        <Item bank="0" id="SAU0_INTIIC01" priority="3"/>
         <Item bank="0" id="TAU0_INTTM01" priority="3"/>
         <Item bank="0" id="TAU0_INTTM02" priority="3"/>
         <Item bank="0" id="TAU0_INTTM03" priority="3"/>
@@ -202,6 +204,9 @@
         <Item bank="0" id="TAU0_INTTM05" priority="3"/>
         <Item bank="0" id="TAU0_INTTM06" priority="3"/>
         <Item bank="0" id="TAU0_INTTM07" priority="3"/>
+        <Item bank="0" id="INTC_INTP6" priority="3"/>
+        <Item bank="0" id="INTC_INTP8" priority="3"/>
+        <Item bank="0" id="INTC_INTP9" priority="3"/>
         <Item bank="0" id="-_INTFL" priority="3"/>
         <Item bank="0" id="COMP_INTCMP0" priority="3"/>
         <Item bank="0" id="COMP_INTCMP1" priority="3"/>
@@ -218,20 +223,18 @@
         <Item bank="0" id="UARTA_INTUR1" priority="3"/>
     </tool>
     <tool id="Pins" version="1.0.1.0">
-        <pinItem allocation="33" comments="" direction="O" id="P147" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="32" comments="" direction="O" id="P146" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="20" comments="" direction="O" id="P70" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="24" comments="" direction="IO" id="CCD01" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="25" comments="" direction="IO" id="CCD00" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="42" comments="" direction="O" id="P01" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="2" comments="" direction="None" id="TOOL0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="29" comments="" direction="None" id="SO00" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="31" comments="" direction="None" id="SCK00" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="19" comments="" direction="None" id="RxDA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="13" comments="" direction="None" id="SDAA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="12" comments="" direction="None" id="SCLA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="22" comments="" direction="None" id="INTP1" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
-        <pinItem allocation="18" comments="" direction="None" id="TxDA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="24" comments="" direction="O" id="P147" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="23" comments="" direction="O" id="P146" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="34" comments="" direction="O" id="P01" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="2" comments="" direction="None" id="SDAA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="9" comments="" direction="None" id="TxDA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="11" comments="" direction="O" id="P70" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="15" comments="" direction="IO" id="CCD01" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="16" comments="" direction="IO" id="CCD00" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="39" comments="" direction="None" id="TOOL0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="10" comments="" direction="None" id="RxDA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="1" comments="" direction="None" id="SCLA0" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="13" comments="" direction="None" id="INTP1" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
     </tool>
     <tool id="Summary" version="1.0.0.0">
         <option id="com.renesas.smc.code.path" value="src\smc_gen"/>
@@ -343,7 +346,7 @@
                     <item id="disable" input="" vlaue="0"/>
                 </option>
             </allocatable>
-            <component description="The universal asynchronous receiver/transmitter(UART) interface supports serial communication." detailDescription="" display="UART Communication" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.uart" version="1.5.0"/>
+            <component description="The universal asynchronous receiver/transmitter(UART) interface supports serial communication." detailDescription="" display="UART Communication" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.uart" version="1.4.0"/>
             <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="UART Communication" display="UARTA0" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.uart.allocator01" type="UARTA">
                 <context>
                     <option enabled="true" id="Mode" selection="both">
@@ -459,8 +462,59 @@
                         <item id="Level3" input="" vlaue="0"/>
                     </option>
                 </allocatable>
+                <allocatable id="INTP6">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="validedge" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level3">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="INTP8">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="validedge" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level3">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="INTP9">
+                    <option enabled="true" id="enableINTP" selection="disable">
+                        <item id="enable" input="" vlaue="0"/>
+                        <item id="disable" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="validedge" selection="falling">
+                        <item id="falling" input="" vlaue="0"/>
+                        <item id="rising" input="" vlaue="0"/>
+                        <item id="both" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="intpPriority" selection="Level3">
+                        <item id="Level0" input="" vlaue="0"/>
+                        <item id="Level1" input="" vlaue="0"/>
+                        <item id="Level2" input="" vlaue="0"/>
+                        <item id="Level3" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
             </allocatable>
-            <component description="The interrupt controller (INTC) is a function that sets request such as external pin interrupts." detailDescription="" display="Interrupt Controller" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intp" version="1.4.0"/>
+            <component description="The interrupt controller (INTC) is a function that sets request such as external pin interrupts." detailDescription="" display="Interrupt Controller" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intp" version="1.3.0"/>
             <allocator channelLevel0="" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Interrupt Controller" display="INTC" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intp" type="">
                 <context/>
             </allocator>
@@ -869,6 +923,44 @@
                             <item id="Output1Unuse" input="" vlaue="0"/>
                         </option>
                     </allocatable>
+                    <allocatable id="P74">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="Pullup" selection="PullupUnuse">
+                            <item id="PullupUse" input="" vlaue="0"/>
+                            <item id="PullupUnuse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="Inputbuffer" selection="InputbufferUnuse">
+                            <item id="InputbufferUse" input="" vlaue="0"/>
+                            <item id="InputbufferUnuse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="Nch" selection="NchUnuse">
+                            <item id="NchUse" input="" vlaue="0"/>
+                            <item id="NchUnuse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Use" input="" vlaue="0"/>
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
+                    <allocatable id="P75">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="Pullup" selection="PullupUnuse">
+                            <item id="PullupUse" input="" vlaue="0"/>
+                            <item id="PullupUnuse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Use" input="" vlaue="0"/>
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
                 </allocatable>
                 <allocatable id="PORT12_Check">
                     <option enabled="true" id="PortnEnable" selection="Disable">
@@ -889,6 +981,21 @@
                     </option>
                 </allocatable>
                 <allocatable id="PORT14_Chan">
+                    <allocatable id="P140">
+                        <option enabled="true" id="UseStatus" selection="Unuse">
+                            <item id="Unuse" input="" vlaue="0"/>
+                            <item id="In" input="" vlaue="0"/>
+                            <item id="Out" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="true" id="Pullup" selection="PullupUnuse">
+                            <item id="PullupUse" input="" vlaue="0"/>
+                            <item id="PullupUnuse" input="" vlaue="0"/>
+                        </option>
+                        <option enabled="false" id="Output1" selection="Output1Unuse">
+                            <item id="Output1Use" input="" vlaue="0"/>
+                            <item id="Output1Unuse" input="" vlaue="0"/>
+                        </option>
+                    </allocatable>
                     <allocatable id="P146">
                         <option enabled="true" id="UseStatus" selection="Out">
                             <item id="Unuse" input="" vlaue="0"/>
@@ -927,7 +1034,7 @@
                     <item id="ReadDigitalOutputLevel" input="" vlaue="0"/>
                 </option>
             </allocatable>
-            <component description="The ports is function that config each pin to be used as general input/output pin or input/output function of internal IP." detailDescription="" display="Ports" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.port" version="1.4.0"/>
+            <component description="The ports is function that config each pin to be used as general input/output pin or input/output function of internal IP." detailDescription="" display="Ports" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.port" version="1.3.0"/>
             <allocator channelLevel0="" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Input output configuration of PORT" display="PORT" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.port.rl78g23.PORT" type="">
                 <context/>
             </allocator>
@@ -988,7 +1095,7 @@
                     <item id="32bitCountMode" input="" vlaue="0"/>
                 </option>
             </allocatable>
-            <component description="The interval timer function is timer that generating timer interrupt at regular intervals. It also can measure the interval of the input signals." detailDescription="" display="Interval Timer" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intervaltimer" version="1.4.0"/>
+            <component description="The interval timer function is timer that generating timer interrupt at regular intervals. It also can measure the interval of the input signals." detailDescription="" display="Interval Timer" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intervaltimer" version="1.3.0"/>
             <allocator channelLevel0="0" channelLevel1="0" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Timer array unit 0 channel 0" display="TAU0_0" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intervaltimer.g23.tau00" type="TAU">
                 <context>
                     <option enabled="true" id="FilterMode" selection="16bitCountMode">
@@ -1056,103 +1163,9 @@
                     <item id="enable" input="" vlaue="0"/>
                 </option>
             </allocatable>
-            <component description="This is a clocked communication function (Master mode) to communicate with two or more devices by using two lines: serial clock (SCL) and serial data (SDA)." detailDescription="" display="IIC Communication (Master mode)" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.iicmaster" version="1.5.0"/>
+            <component description="This is a clocked communication function (Master mode) to communicate with two or more devices by using two lines: serial clock (SCL) and serial data (SDA)." detailDescription="" display="IIC Communication (Master mode)" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.iicmaster" version="1.4.0"/>
             <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="IIC Communication (Master mode)" display="IICA0" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.iicamaster.iica0" type="IICAmaster">
                 <context/>
-            </allocator>
-            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
-        </configuration>
-        <configuration apiMode="FULL_API" id="125a5f61-4d26-4c42-84fe-959abcfcd8d9" inuse="true" name="Config_CSI00">
-            <allocatable id="CSI00">
-                <osocket id="SendSetting" value="SingleTransfer"/>
-                <osocket id="BothSetting" value="SingleTransfer"/>
-                <osocket id="RecvSetting" value="SingleTransfer"/>
-                <isocket id="vddRangeMode" selection="Clock.tool_clock_vddRangeMode" value="hsmainmode"/>
-                <isocket id="fCLK" selection="Clock.tool_clock_fCLK" value="3.2E7"/>
-                <isocket id="evddRange" selection="Clock.tool_clock_evddRange" value="1.8~5.5"/>
-                <option enabled="true" id="TransClockMode" selection="internal">
-                    <item id="internal" input="" vlaue="0"/>
-                    <item id="external" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="OperationClock" selection="CK0">
-                    <item id="CK0" input="" vlaue="0"/>
-                    <item id="CK1" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="Prescaler" selection="FCLK0">
-                    <item id="FCLK0" input="1" vlaue="0"/>
-                    <item id="FCLK1" input="2" vlaue="0"/>
-                    <item id="FCLK2" input="4" vlaue="0"/>
-                    <item id="FCLK3" input="8" vlaue="0"/>
-                    <item id="FCLK4" input="16" vlaue="0"/>
-                    <item id="FCLK5" input="32" vlaue="0"/>
-                    <item id="FCLK6" input="64" vlaue="0"/>
-                    <item id="FCLK7" input="128" vlaue="0"/>
-                    <item id="FCLK8" input="256" vlaue="0"/>
-                    <item id="FCLK9" input="512" vlaue="0"/>
-                    <item id="FCLK10" input="1024" vlaue="0"/>
-                    <item id="FCLK11" input="2048" vlaue="0"/>
-                    <item id="FCLK12" input="4096" vlaue="0"/>
-                    <item id="FCLK13" input="8192" vlaue="0"/>
-                    <item id="FCLK14" input="16384" vlaue="0"/>
-                    <item id="FCLK15" input="32768" vlaue="0"/>
-                </option>
-                <option enabled="true" id="TransferMode" selection="Single">
-                    <item id="Single" input="" vlaue="0"/>
-                    <item id="Continuous" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="DataLength" selection="8Bits">
-                    <item id="8Bits" input="" vlaue="0"/>
-                    <item id="7Bits" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="TransDir" selection="MSB">
-                    <item id="LSB" input="" vlaue="0"/>
-                    <item id="MSB" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="datatiming" selection="Type4Item">
-                    <item id="Type1Item" input="" vlaue="0"/>
-                    <item id="Type2Item" input="" vlaue="0"/>
-                    <item id="Type3Item" input="" vlaue="0"/>
-                    <item id="Type4Item" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="Bitrate" selection="BaudrateValue">
-                    <item id="BaudrateValue" input="8000000" vlaue="1"/>
-                    <item id="Slection9600" input="9600" vlaue="0"/>
-                    <item id="Slection19200" input="19200" vlaue="0"/>
-                    <item id="Slection31250" input="31250" vlaue="0"/>
-                    <item id="Slection38400" input="38400" vlaue="0"/>
-                    <item id="Slection76800" input="76800" vlaue="0"/>
-                    <item id="Slection153600" input="153600" vlaue="0"/>
-                    <item id="Slection312500" input="312500" vlaue="0"/>
-                </option>
-                <option enabled="true" id="INTPriority" selection="Level1">
-                    <item id="Level0" input="" vlaue="0"/>
-                    <item id="Level1" input="" vlaue="0"/>
-                    <item id="Level2" input="" vlaue="0"/>
-                    <item id="Level3" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="TransEnd" selection="Enable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="false" id="RecvError" selection="Enable">
-                    <item id="Enable" input="" vlaue="0"/>
-                    <item id="Disable" input="" vlaue="0"/>
-                </option>
-                <option enabled="true" id="ModeSetting" selection="TransMode">
-                    <item id="TransMode" input="" vlaue="0"/>
-                    <item id="RecvMode" input="" vlaue="0"/>
-                    <item id="BothMode" input="" vlaue="0"/>
-                </option>
-            </allocatable>
-            <component description="SPI (CSI) is communication function that three-wire serial data transfer with clock synchronous." detailDescription="" display="SPI (CSI) Communication" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.csi" version="1.4.0"/>
-            <allocator channelLevel0="0" channelLevel1="0" channelLevel2="00" channelLevel3="" channelLevel4="" channelLevel5="" description="SAU channel 0, CSI channel 00" display="CSI00" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.csi.csi00" type="CSI">
-                <context>
-                    <option enabled="true" id="ModeSetting" selection="TransMode">
-                        <item enabled="true" id="TransMode"/>
-                        <item enabled="true" id="RecvMode"/>
-                        <item enabled="true" id="BothMode"/>
-                    </option>
-                </context>
             </allocator>
             <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
         </configuration>
@@ -1211,7 +1224,7 @@
                     <item id="32bitCountMode" input="" vlaue="0"/>
                 </option>
             </allocatable>
-            <component description="The interval timer function is timer that generating timer interrupt at regular intervals. It also can measure the interval of the input signals." detailDescription="" display="Interval Timer" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intervaltimer" version="1.4.0"/>
+            <component description="The interval timer function is timer that generating timer interrupt at regular intervals. It also can measure the interval of the input signals." detailDescription="" display="Interval Timer" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intervaltimer" version="1.3.0"/>
             <allocator channelLevel0="0" channelLevel1="5" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Timer array unit 0 channel 5" display="TAU0_5" id="com.renesas.smc.tools.swcomponent.codegenerator.rl78.intervaltimer.g23.tau05" type="TAU">
                 <context>
                     <option enabled="true" id="FilterMode" selection="16bitCountMode">

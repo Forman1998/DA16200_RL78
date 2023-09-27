@@ -14,13 +14,13 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2021, 2023 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2021, 2022 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name        : Config_TAU0_5_user.c
-* Component Version: 1.4.0
-* Device(s)        : R7F100GFNxFP
+* Component Version: 1.3.0
+* Device(s)        : R7F100GGNxFB
 * Description      : This file implements device driver for Config_TAU0_5.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
@@ -70,20 +70,18 @@ static void __near r_Config_TAU0_5_interrupt(void)
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-
 void R_Config_TAU0_5_Blocking_Wait(void)
 {
-    TMIF05 = 0U;    /* clear INTTM05 interrupt flag */
-    TMMK05 = 1U;    /* disable INTTM05 interrupt */
-    TS0 |= _0020_TAU_CH5_START_TRG_ON;
+	TMIF05 = 0U;    /* clear INTTM05 interrupt flag */
+	TMMK05 = 1U;    /* disable INTTM05 interrupt */
+	TS0 |= _0020_TAU_CH5_START_TRG_ON;
 
-    while(0U == TMIF05)
-    {
-        NOP();
-    }
-
-    TT0 |= _0020_TAU_CH5_STOP_TRG_ON;
-    TMIF05 = 0U;    /* clear INTTM05 interrupt flag */
+	while(0U == TMIF05)
+	{
+		NOP(); /* TODO: HALT*/
+	}
+	Sensor_read();
+	TT0 |= _0020_TAU_CH5_STOP_TRG_ON;
+	TMIF05 = 0U;    /* clear INTTM05 interrupt flag */
 }
-
 /* End user code. Do not edit comment generated here */
